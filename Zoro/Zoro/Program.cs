@@ -6,12 +6,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<ZoroDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("ConStr")));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+    .AddEntityFrameworkStores<ZoroDbContext>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

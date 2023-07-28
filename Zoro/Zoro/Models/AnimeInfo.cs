@@ -1,7 +1,10 @@
-﻿namespace Zoro.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Zoro.Models
 {
     public class AnimeInfo
     {
+        [Key]
         public Guid Id { get; set; }
 
         public string AnimeName { get; set; }
