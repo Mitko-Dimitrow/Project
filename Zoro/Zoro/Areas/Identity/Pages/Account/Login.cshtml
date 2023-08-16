@@ -38,9 +38,11 @@
                     <p>
                         <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
                     </p>
-                    <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register Now!</a>
-                    </p>
+                    <div class="login__register">
+                        <p>
+                            <button class="w-100 btn btn-lg btn-primary"><a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register Now!</a></button>
+                        </p>
+                    </div>
                 </div>
             </form>
         </section>
