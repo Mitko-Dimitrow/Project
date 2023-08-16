@@ -48,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Terminator/Desktop/Zoro/Zoro/Zoro/Views/MostPopular/MostPopular.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9zdFBvcHVsYXJcTW9zdFBvcHVsYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Terminator/Desktop/Zoro/Zoro/Zoro/Views/Movies/Movies.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXE1vdmllcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -62,6 +66,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Terminator/Desktop/Zoro/Zoro/Zoro/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Terminator/Desktop/Zoro/Zoro/Zoro/Views/TvSeries/TvSeries.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHZTZXJpZXNcVHZTZXJpZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Terminator/Desktop/Zoro/Zoro/Zoro/Views/_ViewImports.cshtml]

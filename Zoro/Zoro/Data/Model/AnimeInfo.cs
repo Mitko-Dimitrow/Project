@@ -12,5 +12,7 @@ namespace Zoro.Data.Model
         public string genre { get; set; }
 
         public string Status { get; set; }
+
+        public int Episodes { get; set; }
     }
 }
