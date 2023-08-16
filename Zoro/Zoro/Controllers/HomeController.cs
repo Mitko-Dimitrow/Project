@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Zoro.Models;
 
 namespace Zoro.Controllers
 {
-    public class HomeController : Controller
+    [AllowAnonymous]
+    public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
 
