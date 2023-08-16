@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Zoro.Models
+namespace Zoro.Data.Model
 {
     public class AnimeInfo
     {
@@ -12,8 +12,5 @@ namespace Zoro.Models
         public string genre { get; set; }
 
         public string Status { get; set; }
-
-
-
     }
 }
