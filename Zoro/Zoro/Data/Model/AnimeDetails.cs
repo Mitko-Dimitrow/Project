@@ -5,10 +5,10 @@ namespace Zoro.Data.Model
 	public class AnimeDetails
 	{
 		[Key]
-		public Guid Id { get; set; }
+		public Guid DetailsId { get; set; }
 
 		[Required] 
-		public string[] genre { get; set; } = null!;
+		public string[] genres { get; set; } = null!;
 
 		[Required] 
 		public string Status { get; set; } = null!;

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Zoro.Data;
 
@@ -11,9 +12,10 @@ using Zoro.Data;
 namespace Zoro.Migrations
 {
     [DbContext(typeof(ZoroDbContext))]
-    partial class ZoroDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230818174848_TableFieldNameChange")]
+    partial class TableFieldNameChange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -226,7 +228,7 @@ namespace Zoro.Migrations
 
             modelBuilder.Entity("Zoro.Data.Model.AnimeDetails", b =>
                 {
-                    b.Property<Guid>("DetailsId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -238,11 +240,11 @@ namespace Zoro.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("genres")
+                    b.Property<string>("genre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("DetailsId");
+                    b.HasKey("Id");
 
                     b.ToTable("AnimeDetails");
                 });
@@ -288,7 +290,7 @@ namespace Zoro.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("AnimeDetailsDetailsId")
+                    b.Property<Guid?>("AnimeDetailsId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Character")
@@ -299,7 +301,7 @@ namespace Zoro.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AnimeDetailsDetailsId");
+                    b.HasIndex("AnimeDetailsId");
 
                     b.ToTable("Cast");
                 });
@@ -312,7 +314,7 @@ namespace Zoro.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EpisodeId"), 1L, 1);
 
-                    b.Property<Guid?>("AnimeDetailsDetailsId")
+                    b.Property<Guid?>("AnimeDetailsId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int?>("GogoAnimeInnfoAnimeId")
@@ -331,7 +333,7 @@ namespace Zoro.Migrations
 
                     b.HasKey("EpisodeId");
 
-                    b.HasIndex("AnimeDetailsDetailsId");
+                    b.HasIndex("AnimeDetailsId");
 
                     b.HasIndex("GogoAnimeInnfoAnimeId");
 
@@ -460,14 +462,14 @@ namespace Zoro.Migrations
                 {
                     b.HasOne("Zoro.Data.Model.AnimeDetails", null)
                         .WithMany("Cast")
-                        .HasForeignKey("AnimeDetailsDetailsId");
+                        .HasForeignKey("AnimeDetailsId");
                 });
 
             modelBuilder.Entity("Zoro.Data.Model.Episodes", b =>
                 {
                     b.HasOne("Zoro.Data.Model.AnimeDetails", null)
                         .WithMany("Episodes")
-                        .HasForeignKey("AnimeDetailsDetailsId");
+                        .HasForeignKey("AnimeDetailsId");
 
                     b.HasOne("Zoro.Data.Model.GogoAnimeInnfo", null)
                         .WithMany("Episodes")

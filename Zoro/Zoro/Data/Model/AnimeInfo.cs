@@ -6,16 +6,16 @@ namespace Zoro.Data.Model
     public class AnimeInfo
     {
         [Key]
-        public Guid Id { get; set; }
+        public Guid MyAnimeId { get; set; }
 
         [Required]
-        public string AnimeName { get; set; } = null!;
+        public string Title { get; set; } = null!;
 
         [Required] 
         public string Type { get; set; } = null!;
 
         [Required]
-        public int Episodes { get; set; }
+        public int TotalEpisodes { get; set; }
 
         [Required]
         public string Description { get; set; } = null!;

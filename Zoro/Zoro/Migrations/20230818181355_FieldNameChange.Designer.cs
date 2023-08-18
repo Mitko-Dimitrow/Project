@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Zoro.Data;
 
@@ -11,9 +12,10 @@ using Zoro.Data;
 namespace Zoro.Migrations
 {
     [DbContext(typeof(ZoroDbContext))]
-    partial class ZoroDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230818181355_FieldNameChange")]
+    partial class FieldNameChange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -238,7 +240,7 @@ namespace Zoro.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("genres")
+                    b.Property<string>("genre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

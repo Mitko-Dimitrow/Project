@@ -20,7 +20,7 @@ namespace Zoro.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<AnimeDetails>()
-                .Property(ad => ad.genre)
+                .Property(ad => ad.genres)
                 .HasConversion(
                 genre => string.Join(',', genre),
                 genreString => genreString.Split(',', StringSplitOptions.RemoveEmptyEntries));
