@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Zoro.Data;
 
@@ -11,9 +12,10 @@ using Zoro.Data;
 namespace Zoro.Migrations
 {
     [DbContext(typeof(ZoroDbContext))]
-    partial class ZoroDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230818125447_NewTables")]
+    partial class NewTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -306,54 +308,50 @@ namespace Zoro.Migrations
 
             modelBuilder.Entity("Zoro.Data.Model.Episodes", b =>
                 {
-                    b.Property<int>("EpisodeId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EpisodeId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<Guid?>("AnimeDetailsId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("GogoAnimeInnfoAnimeId")
+                    b.Property<int?>("GogoAnimeInnfoId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Id")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Number")
                         .HasColumnType("int");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Url")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("EpisodeId");
+                    b.HasKey("Id");
 
                     b.HasIndex("AnimeDetailsId");
 
-                    b.HasIndex("GogoAnimeInnfoAnimeId");
+                    b.HasIndex("GogoAnimeInnfoId");
 
                     b.ToTable("Episodes");
                 });
 
             modelBuilder.Entity("Zoro.Data.Model.GogoAnimeInnfo", b =>
                 {
-                    b.Property<int>("AnimeId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AnimeId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Genres")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Id")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -365,6 +363,10 @@ namespace Zoro.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReleaseDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Status")
@@ -389,7 +391,7 @@ namespace Zoro.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AnimeId");
+                    b.HasKey("Id");
 
                     b.ToTable("GogoAnimeInnfo");
                 });
@@ -471,7 +473,7 @@ namespace Zoro.Migrations
 
                     b.HasOne("Zoro.Data.Model.GogoAnimeInnfo", null)
                         .WithMany("Episodes")
-                        .HasForeignKey("GogoAnimeInnfoAnimeId");
+                        .HasForeignKey("GogoAnimeInnfoId");
                 });
 
             modelBuilder.Entity("Zoro.Data.Model.AnimeDetails", b =>

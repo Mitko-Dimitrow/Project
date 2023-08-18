@@ -15,9 +15,22 @@ namespace Zoro.Data
 
         public DbSet<AnimeInfo> AnimeInfo { get; set; }
         public DbSet<AnimeDetails> AnimeDetails { get; set; }
+        public DbSet<GogoAnimeInnfo> GogoAnimeInnfo { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<AnimeDetails>()
+                .Property(ad => ad.genre)
+                .HasConversion(
+                genre => string.Join(',', genre),
+                genreString => genreString.Split(',', StringSplitOptions.RemoveEmptyEntries));
+
+            builder.Entity<GogoAnimeInnfo>()
+                .Property(gg => gg.Genres)
+                .HasConversion(
+                genre => string.Join(',', genre),
+                genreString => genreString.Split(',', StringSplitOptions.RemoveEmptyEntries));
+
             base.OnModelCreating(builder);
         }
     }

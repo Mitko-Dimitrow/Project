@@ -7,23 +7,18 @@ namespace Zoro.Data.Model
 		[Key]
 		public Guid Id { get; set; }
 
-		public string genre { get; set; }
+		[Required] 
+		public string[] genre { get; set; } = null!;
 
-		public string Status { get; set; }
+		[Required] 
+		public string Status { get; set; } = null!;
+		[Required]
+		public string ReleaseDate { get; set; } = null!;
 
-		public int Duration { get; set; }
+		[Required]
+        public List<Episodes> Episodes { get; set; } = null!;
 
-		public DateTime StartAiring { get; set; }
-
-		public DateTime FinishedAiring { get; set; }
-
-		public string Studious { get; set; }
-
-		public string Producers { get; set; }
-
-		public double MALScore { get; set; }
-
-		public List<Cast> Cast { get; set; }
+        public List<Cast>? Cast { get; set; }
 
 
 	}

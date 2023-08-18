@@ -4,8 +4,8 @@
 	{
 		public Guid Id { get; set; }
 
-		public string Character { get; set; }
-		public string VActor { get; set; }
+		public string? Character { get; set; }
+		public string? VActor { get; set; }
 
 	}
 }

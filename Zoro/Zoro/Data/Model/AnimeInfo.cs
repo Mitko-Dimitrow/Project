@@ -8,19 +8,24 @@ namespace Zoro.Data.Model
         [Key]
         public Guid Id { get; set; }
 
-        public string AnimeName { get; set; }
+        [Required]
+        public string AnimeName { get; set; } = null!;
 
-        public string Type { get; set; }
+        [Required] 
+        public string Type { get; set; } = null!;
 
+        [Required]
         public int Episodes { get; set; }
 
-        public string Description { get; set; }
+        [Required]
+        public string Description { get; set; } = null!;
 
-        public string Image { get; set; }
+        [Required] 
+        public string Image { get; set; } = null!;
 
         [ForeignKey(nameof(AnimeDetails))]
         public Guid AnimeDetailsId { get; set; }
 
-        public AnimeDetails AnimeDetails { get; set; }
+        public AnimeDetails AnimeDetails { get; set; } = null!;
     }
 }
