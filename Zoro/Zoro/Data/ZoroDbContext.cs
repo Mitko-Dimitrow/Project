@@ -14,6 +14,7 @@ namespace Zoro.Data
         }
 
         public DbSet<AnimeInfo> AnimeInfo { get; set; }
+        public DbSet<AnimeDetails> AnimeDetails { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

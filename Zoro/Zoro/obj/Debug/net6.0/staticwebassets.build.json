@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yeNBl4W9Ayqz0Lh8fY+ENIIBf5VLySCW6EM3VHN1TGo=",
+  "Hash": "FF5GsxGfqhPjLVoO+S2biKMU+jdZ55QsqAayvn0IABE=",
   "Source": "Zoro",
   "BasePath": "_content/Zoro",
   "Mode": "Default",
@@ -2089,40 +2089,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
-    },
-    {
-      "Identity": "C:\\Users\\Terminator\\Desktop\\Zoro\\Zoro\\Zoro\\wwwroot\\MugiwaraBg.bmp",
-      "SourceId": "Zoro",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Terminator\\Desktop\\Zoro\\Zoro\\Zoro\\wwwroot\\",
-      "BasePath": "_content/Zoro",
-      "RelativePath": "MugiwaraBg.bmp",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\MugiwaraBg.bmp"
-    },
-    {
-      "Identity": "C:\\Users\\Terminator\\Desktop\\Zoro\\Zoro\\Zoro\\wwwroot\\MugiwaraBg.jpg",
-      "SourceId": "Zoro",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Terminator\\Desktop\\Zoro\\Zoro\\Zoro\\wwwroot\\",
-      "BasePath": "_content/Zoro",
-      "RelativePath": "MugiwaraBg.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\MugiwaraBg.jpg"
     }
   ]
 }

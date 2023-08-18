@@ -16,3 +16,7 @@ html {
 body {
   margin-bottom: 60px;
 }
+ #mw-top .mwt-content .mwt-icon img{
+     width:auto;
+     height:auto
+ }

@@ -4,7 +4,7 @@ namespace Zoro.Controllers
 {
     public class MostPopularController : BaseController
     {
-        public IActionResult Index()
+        public IActionResult MostPopular()
         {
             return View();
         }

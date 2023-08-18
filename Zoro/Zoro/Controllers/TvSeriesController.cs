@@ -4,7 +4,7 @@ namespace Zoro.Controllers
 {
     public class TvSeriesController : BaseController
     {
-        public IActionResult Index()
+        public IActionResult TvSeries()
         {
             return View();
         }

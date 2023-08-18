@@ -5,14 +5,6 @@
       "PackagePath": "staticwebassets\\Zoro.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Terminator\\Desktop\\Zoro\\Zoro\\Zoro\\wwwroot\\MugiwaraBg.bmp",
-      "PackagePath": "staticwebassets\\MugiwaraBg.bmp"
-    },
-    {
-      "Id": "C:\\Users\\Terminator\\Desktop\\Zoro\\Zoro\\Zoro\\wwwroot\\MugiwaraBg.jpg",
-      "PackagePath": "staticwebassets\\MugiwaraBg.jpg"
-    },
-    {
       "Id": "C:\\Users\\Terminator\\Desktop\\Zoro\\Zoro\\Zoro\\wwwroot\\css\\StyleSheet.css",
       "PackagePath": "staticwebassets\\css\\StyleSheet.css"
     },

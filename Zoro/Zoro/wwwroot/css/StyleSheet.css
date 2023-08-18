@@ -408,6 +408,11 @@ img, svg {
     vertical-align: middle
 }
 
+#mw-top .mwt-content .mwt-icon img {
+    width: auto;
+    height: auto
+}
+
 table {
     caption-side: bottom;
     border-collapse: collapse
