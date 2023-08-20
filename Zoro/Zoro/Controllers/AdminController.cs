@@ -1,4 +1,5 @@
 ﻿using FashionStoreDemo.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Runtime.InteropServices;
@@ -7,6 +8,7 @@ using Zoro.Data.Model;
 
 namespace Zoro.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class AdminController : BaseController
     {
         private readonly ZoroDbContext zoroDb;
@@ -38,6 +40,7 @@ namespace Zoro.Controllers
                 var myAnimeDetails = JsonConvert.DeserializeObject<AnimeDetails>(animeRes);
 
                 await zoroDb.AnimeDetails.AddAsync(myAnimeDetails);
+
                 await zoroDb.GogoAnimeInnfo.AddAsync(animeInfo);
                 if(myAnime.AnimeDetails==null)
                 {

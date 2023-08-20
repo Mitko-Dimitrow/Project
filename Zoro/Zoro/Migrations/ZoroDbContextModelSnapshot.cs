@@ -244,7 +244,7 @@ namespace Zoro.Migrations
 
                     b.HasKey("DetailsId");
 
-                    b.ToTable("AnimeDetails");
+                    b.ToTable("AnimeDetails", (string)null);
                 });
 
             modelBuilder.Entity("Zoro.Data.Model.AnimeInfo", b =>
@@ -279,7 +279,7 @@ namespace Zoro.Migrations
 
                     b.HasIndex("AnimeDetailsId");
 
-                    b.ToTable("AnimeInfo");
+                    b.ToTable("AnimeInfo", (string)null);
                 });
 
             modelBuilder.Entity("Zoro.Data.Model.Cast", b =>
@@ -301,7 +301,7 @@ namespace Zoro.Migrations
 
                     b.HasIndex("AnimeDetailsDetailsId");
 
-                    b.ToTable("Cast");
+                    b.ToTable("Cast", (string)null);
                 });
 
             modelBuilder.Entity("Zoro.Data.Model.Episodes", b =>
@@ -335,7 +335,7 @@ namespace Zoro.Migrations
 
                     b.HasIndex("GogoAnimeInnfoAnimeId");
 
-                    b.ToTable("Episodes");
+                    b.ToTable("Episodes", (string)null);
                 });
 
             modelBuilder.Entity("Zoro.Data.Model.GogoAnimeInnfo", b =>
@@ -391,7 +391,7 @@ namespace Zoro.Migrations
 
                     b.HasKey("AnimeId");
 
-                    b.ToTable("GogoAnimeInnfo");
+                    b.ToTable("GogoAnimeInnfo", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
