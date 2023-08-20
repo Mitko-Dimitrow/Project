@@ -11,6 +11,6 @@ namespace Zoro.Models
 
         public string Image { get; set; } = null!;
 
-        public List<Episodes> Episodes { get; set; }
+        public List<EpisodesViewModel> Episodes { get; set; }
     }
 }

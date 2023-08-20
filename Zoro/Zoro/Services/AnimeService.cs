@@ -15,10 +15,22 @@ namespace Zoro.Services
             this.zoroDb = zoroDb;
         }
 
-
-        public async Task<IEnumerable<AllAnimeViewModel>> GetAllAnime()
+        public async Task<IEnumerable<AllAnimeViewModel>> GetAllMoviesAnime()
         {
-            return await zoroDb.AnimeInfo
+            return await zoroDb.AnimeInfo.Where(a => a.Type == "MOVIE")
+                .Select(anime => new AllAnimeViewModel
+                {
+                    Title = anime.Title,
+                    Type = anime.Type,
+                    Description = anime.Description,
+                    Image = anime.Image,
+                    TotalEpisodes = anime.TotalEpisodes
+                }).ToListAsync();
+        }
+
+        public async Task<IEnumerable<AllAnimeViewModel>> GetAllTVSeriesAnime()
+        {
+            return await zoroDb.AnimeInfo.Where(a=>a.Type=="TV Series")
                  .Select(anime => new AllAnimeViewModel
                  {
                      Title=anime.Title,
@@ -31,11 +43,14 @@ namespace Zoro.Services
 
         public async Task<AnimeEpisodesViewModel> GetAnimeEpisodes(string animeName)
         {
-            var episodes = await zoroDb.AnimeInfo.Where(a=>a.Title==animeName)
-                .Select(e => new Episodes
-                {
-                    Number = e.AnimeDetails.Episodes,
-                    Url = e.Url
+            var anime = zoroDb.AnimeInfo.Where(a => a.Title == animeName)
+                .Select(a => new AnimeInfo { AnimeDetailsId = a.AnimeDetailsId }).ToList();
+
+            var episodes = await zoroDb.AnimeDetails.Where(a => a.DetailsId == anime[0].AnimeDetailsId)
+                .Select(e => new EpisodesViewModel
+                { 
+
+                    Url = e.Episodes[0].Url
                 }).ToListAsync();
 
 

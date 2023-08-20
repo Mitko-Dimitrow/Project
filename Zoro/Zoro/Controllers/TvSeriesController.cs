@@ -14,7 +14,7 @@ namespace Zoro.Controllers
 
         public async Task<IActionResult> TvSeries()
         {
-            var model = await anime.GetAllAnime();
+            var model = await anime.GetAllTVSeriesAnime();
 
             return View(model);
         }
